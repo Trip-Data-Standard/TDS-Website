@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trip Data Standard (TDS)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function toggleSpec() {
+      const fullSpec = document.getElementById('fullSpec');
+      const toggle = document.getElementById('toggleLink');
+      if (fullSpec.classList.contains('hidden')) {
+        fullSpec.classList.remove('hidden');
+        toggle.innerText = 'Hide full spec';
+      } else {
+        fullSpec.classList.add('hidden');
+        toggle.innerText = 'Show full spec';
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <header class="flex items-center justify-between p-6 bg-gray-100 border-b border-gray-300">
+    <img src="logo.png" alt="TDS Logo" class="h-16">
+    <a href="https://github.com/Trip-Data-Standard" target="_blank">
+        <img src="github.png" alt="GitHub Logo" class="h-8 w-8">
+    </a>
+  </header>
+
+  <section class="text-center py-16 px-4 bg-white">
+    <h1 class="text-4xl font-extrabold mb-4">Trip Data Standard (TDS)</h1>
+    <p class="text-xl max-w-2xl mx-auto">An open standard and central observatory for trip data across micromobility in Europe — powered by Cycle Industries Europe (CIE).</p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold mb-4">What is TDS?</h2>
+    <p class="text-base mb-4">TDS (Trip Data Standard) is an open, lightweight format for sharing anonymised trip-level data in a standardised way across micromobility operators. Based on common industry practices like GBFS and MDS, TDS allows operators to easily publish a <code class="bg-gray-100 px-1 py-0.5 rounded">trips.json</code> feed for secure ingestion into the central CIE-managed database.</p>
+    <div class="bg-gray-50 border border-gray-200 rounded p-4 text-sm font-mono text-left overflow-x-auto">
+      <pre><code>{
+  "trip_id": "abc123",
+  "system_id": "velo-city",
+  "vehicle_type_id": "bike",
+</code></pre><div id="fullSpec" class="hidden"><pre class="-mt-[20px]"><code>
+  "start_time": "2025-05-01T08:15:00Z",
+  "end_time": "2025-05-01T08:35:00Z",
+  "distance_meters": 3200,
+  "start_lat": 48.8566,
+  "start_lon": 2.3522,
+  "end_lat": 48.8584,
+  "end_lon": 2.2945
+}</code></pre>
+      </div>
+      <p id="toggleLink" onclick="toggleSpec()" class="text-right text-blue-600 hover:underline text-xs cursor-pointer mt-1">Show full spec</p>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold mb-4">Why TDS?</h2>
+    <p class="text-base">Public bodies, transport planners, researchers, and industry stakeholders need a clear view of how people are moving through cities. TDS provides a simple and privacy-compliant way to gather real-world usage data from micromobility systems across Europe. Insights generated from the data help improve infrastructure, guide policy, and strengthen the future of shared transport.</p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 py-12 text-center">
+    <p class="text-sm uppercase text-gray-500 mb-2">I'm an operator</p>
+    <a href="https://github.com/Trip-Data-Standard" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold py-3 px-6 rounded">Find Out More</a>
+  </section>
+
+  <footer class="text-center text-sm text-gray-500 py-6 border-t border-gray-300">
+    &copy; 2025 Cycle Industries Europe. All rights reserved.
+  </footer>
+</body>
+</html>
